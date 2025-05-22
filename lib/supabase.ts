@@ -1,32 +1,42 @@
 import { createClient } from "@supabase/supabase-js"
 
-// Use empty strings as fallbacks during build time
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || ''
-const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || ''
-
-// Create a dummy client if credentials are missing (for build time)
-const createSupabaseClient = () => {
-  if (!supabaseUrl || !supabaseAnonKey) {
-    // Return a mock client during build time or when credentials are missing
-    console.warn('Supabase credentials missing, using mock client')
+// Mock Supabase client for build time and when credentials are missing
+class MockSupabaseClient {
+  from(table: string) {
     return {
-      from: () => ({
-        select: () => ({ data: null, error: null }),
-        insert: () => ({ data: null, error: null }),
-        update: () => ({ data: null, error: null }),
-        delete: () => ({ data: null, error: null }),
-        eq: () => ({ data: null, error: null }),
-        order: () => ({ data: null, error: null }),
-        single: () => ({ data: null, error: null }),
-      }),
-    } as any
+      select: () => Promise.resolve({ data: [], error: null }),
+      insert: () => Promise.resolve({ data: null, error: null }),
+      update: () => Promise.resolve({ data: null, error: null }),
+      delete: () => Promise.resolve({ data: null, error: null }),
+      eq: () => this.from(table),
+      order: () => this.from(table),
+      single: () => Promise.resolve({ data: null, error: null }),
+    };
   }
-
-  // Create a real client when credentials are available
-  return createClient(supabaseUrl, supabaseAnonKey)
 }
 
-export const supabase = createSupabaseClient()
+// Determine if we're in a build environment
+const isBuildTime = process.env.NODE_ENV === 'production' && typeof window === 'undefined';
+
+// Create and export the Supabase client
+let supabaseInstance: any;
+
+try {
+  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+  const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+
+  if (isBuildTime || !supabaseUrl || !supabaseAnonKey) {
+    console.warn('Using mock Supabase client (build time or missing credentials)');
+    supabaseInstance = new MockSupabaseClient();
+  } else {
+    supabaseInstance = createClient(supabaseUrl, supabaseAnonKey);
+  }
+} catch (error) {
+  console.warn('Error initializing Supabase client, using mock client instead:', error);
+  supabaseInstance = new MockSupabaseClient();
+}
+
+export const supabase = supabaseInstance;
 
 // Types for our database tables
 export interface ContactSubmission {
