@@ -23,55 +23,51 @@ export function Logo({ className, variant = "default" }: LogoProps) {
             viewBox="0 0 48 48"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
-            className="text-primary"
+            className="text-accent"
           >
-            {/* Eagle Shield Background */}
-            <path
-              d="M24 4C12.954 4 4 12.954 4 24C4 35.046 12.954 44 24 44C35.046 44 44 35.046 44 24C44 12.954 35.046 4 24 4Z"
-              fill="currentColor"
-              fillOpacity="0.1"
-            />
+            {/* Gold Circular Background */}
+            <circle cx="24" cy="24" r="22" className="fill-accent/5" />
+            <circle cx="24" cy="24" r="20" className="fill-accent/10" />
 
-            {/* Eagle Wings */}
+            {/* Outer Gold Ring */}
+            <circle cx="24" cy="24" r="21" fill="none" stroke="currentColor" strokeWidth="1" />
+
+            {/* Stylized A for Adeleke */}
             <motion.path
-              d="M38 20C38 20 34 16 24 16C14 16 10 20 10 20C10 20 14 14 24 14C34 14 38 20 38 20Z"
-              fill="currentColor"
-              animate={{
-                d: [
-                  "M38 20C38 20 34 16 24 16C14 16 10 20 10 20C10 20 14 14 24 14C34 14 38 20 38 20Z",
-                  "M40 18C40 18 34 14 24 14C14 14 8 18 8 18C8 18 14 12 24 12C34 12 40 18 40 18Z",
-                  "M38 20C38 20 34 16 24 16C14 16 10 20 10 20C10 20 14 14 24 14C34 14 38 20 38 20Z",
-                ],
-              }}
-              transition={{ duration: 5, repeat: Number.POSITIVE_INFINITY, repeatType: "reverse" }}
+              d="M24 8L34 34H14L24 8Z"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              strokeLinejoin="round"
+              animate={{ strokeWidth: [1.5, 2, 1.5] }}
+              transition={{ duration: 3, repeat: Number.POSITIVE_INFINITY, repeatType: "reverse" }}
             />
 
-            {/* Eagle Body */}
-            <path d="M24 18C20.686 18 18 20.686 18 24V32H30V24C30 20.686 27.314 18 24 18Z" fill="currentColor" />
+            {/* Horizontal Bar in A */}
+            <rect x="18" y="24" width="12" height="1.5" fill="currentColor" />
 
-            {/* Eagle Head */}
-            <path
-              d="M24 16C22.895 16 22 16.895 22 18C22 19.105 22.895 20 24 20C25.105 20 26 19.105 26 18C26 16.895 25.105 16 24 16Z"
-              fill="currentColor"
-            />
-
-            {/* Shield on Eagle's Chest */}
-            <path d="M24 22C23.172 22 22.5 22.672 22.5 23.5V28H25.5V23.5C25.5 22.672 24.828 22 24 22Z" fill="white" />
-
-            {/* Stars */}
+            {/* Gold Stars */}
             <motion.g
-              animate={{ opacity: [0.5, 1, 0.5] }}
+              animate={{ opacity: [0.7, 1, 0.7] }}
               transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY, repeatType: "reverse" }}
             >
-              <circle cx="20" cy="24" r="1" fill="white" />
-              <circle cx="28" cy="24" r="1" fill="white" />
-              <circle cx="24" cy="24" r="1" fill="white" />
+              {/* Top Star */}
+              <path d="M24 6L25 8H27L25.5 9L26.5 11L24 10L21.5 11L22.5 9L21 8H23L24 6Z" fill="currentColor" />
+
+              {/* Left Star */}
+              <path d="M13 24L14 26H16L14.5 27L15.5 29L13 28L10.5 29L11.5 27L10 26H12L13 24Z" fill="currentColor" />
+
+              {/* Right Star */}
+              <path d="M35 24L36 26H38L36.5 27L37.5 29L35 28L32.5 29L33.5 27L32 26H34L35 24Z" fill="currentColor" />
+
+              {/* Bottom Star */}
+              <path d="M24 36L25 38H27L25.5 39L26.5 41L24 40L21.5 41L22.5 39L21 38H23L24 36Z" fill="currentColor" />
             </motion.g>
           </svg>
 
           {/* Animated glow effect */}
           <motion.div
-            className="absolute inset-0 rounded-full bg-primary/20 blur-md -z-10"
+            className="absolute inset-0 rounded-full bg-accent/30 blur-md -z-10"
             animate={{ scale: [1, 1.2, 1] }}
             transition={{ duration: 3, repeat: Number.POSITIVE_INFINITY, repeatType: "reverse" }}
           />
@@ -92,8 +88,8 @@ export function Logo({ className, variant = "default" }: LogoProps) {
               isMobile ? "text-xl" : isFooter ? "text-2xl" : "text-2xl",
             )}
             animate={{
-              backgroundImage: "linear-gradient(to right, #3b82f6, #93c5fd, #3b82f6)",
-              backgroundSize: "200% auto",
+              backgroundImage: "linear-gradient(to right, #F4C430, #F8D35E, #E0B01C, #F4C430)",
+              backgroundSize: "300% auto",
               backgroundClip: "text",
               WebkitBackgroundClip: "text",
               color: "transparent",
@@ -107,7 +103,7 @@ export function Logo({ className, variant = "default" }: LogoProps) {
       </div>
 
       <motion.span
-        className="absolute -bottom-1 left-0 h-0.5 bg-primary"
+        className="absolute -bottom-1 left-0 h-0.5 bg-accent"
         initial={{ width: 0 }}
         whileHover={{ width: "100%" }}
         transition={{ duration: 0.3 }}
