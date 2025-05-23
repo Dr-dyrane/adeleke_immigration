@@ -47,7 +47,7 @@ export function Header() {
         animate={{ y: 0 }}
         transition={{ duration: 0.5 }}
       >
-        <div className="w-full px-4 sm:px-6 md:px-10 lg:px-16">
+        <div className="container max-w-6xl mx-auto px-4">
           <div className="flex items-center justify-between">
             <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.3 }}>
               <Logo variant={isMobile ? "mobile" : "default"} />
@@ -67,7 +67,7 @@ export function Header() {
                     href={item.href}
                     className={cn(
                       "px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 relative overflow-hidden group flex items-center gap-2",
-                      pathname === item.href ? "text-accent" : "text-muted-foreground hover:text-foreground",
+                      pathname === item.href ? "text-primary" : "text-muted-foreground hover:text-foreground",
                     )}
                   >
                     <item.icon className="h-4 w-4" />
@@ -75,7 +75,7 @@ export function Header() {
 
                     {/* Background highlight on hover */}
                     <motion.span
-                      className="absolute inset-0 rounded-full -z-10 bg-accent/10"
+                      className="absolute inset-0 rounded-full -z-10 bg-primary/10"
                       initial={{ scale: 0, opacity: 0 }}
                       animate={{
                         scale: hoveredItem === item.name || pathname === item.href ? 1 : 0,
@@ -92,7 +92,7 @@ export function Header() {
                         transition={{ type: "spring", stiffness: 300, damping: 30 }}
                       >
                         <svg width="24" height="4" viewBox="0 0 24 4" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M0 0H24L12 4L0 0Z" fill="currentColor" className="text-accent" />
+                          <path d="M0 0H24L12 4L0 0Z" fill="currentColor" className="text-primary" />
                         </svg>
                       </motion.div>
                     )}
@@ -109,7 +109,7 @@ export function Header() {
                   className="rounded-full px-6 hover-glow transition-all duration-300 relative overflow-hidden group"
                 >
                   <motion.span
-                    className="absolute inset-0 bg-accent/20 rounded-full"
+                    className="absolute inset-0 bg-primary/20 rounded-full"
                     initial={{ scale: 0 }}
                     whileHover={{ scale: 1 }}
                     transition={{ duration: 0.3 }}
@@ -166,7 +166,7 @@ export function Header() {
               transition={{ duration: 0.3 }}
               style={{ top: "60px" }}
             >
-              <div className="w-full px-4 sm:px-6 md:px-10 py-6 flex flex-col h-full">
+              <div className="container px-4 py-6 flex flex-col h-full">
                 <nav className="flex flex-col space-y-4">
                   {navigation.map((item, index) => (
                     <motion.div
@@ -180,9 +180,9 @@ export function Header() {
                       <Link
                         href={item.href}
                         className={cn(
-                          "px-4 py-4 rounded-2xl text-lg font-medium transition-all duration-300 flex items-center gap-3",
+                          "px-4 py-4 rounded-2xl text-lg font-medium transition-all duration-300 block flex items-center gap-3",
                           pathname === item.href
-                            ? "bg-accent/10 text-accent"
+                            ? "bg-primary/10 text-primary"
                             : "text-muted-foreground hover:bg-accent/50",
                         )}
                         onClick={() => setIsMenuOpen(false)}
@@ -191,7 +191,7 @@ export function Header() {
                         {item.name}
                         {pathname === item.href && (
                           <motion.div
-                            className="w-2 h-2 rounded-full bg-accent absolute right-4 top-1/2 transform -translate-y-1/2"
+                            className="w-2 h-2 rounded-full bg-primary absolute right-4 top-1/2 transform -translate-y-1/2"
                             layoutId="mobileActiveDot"
                           />
                         )}
