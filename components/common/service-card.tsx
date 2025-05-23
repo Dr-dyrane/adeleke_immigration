@@ -24,8 +24,8 @@ export function ServiceCard({ service }: ServiceCardProps) {
   const [isHovered, setIsHovered] = useState(false)
   const cardRef = useRef<HTMLDivElement>(null)
 
-  // Dynamically get the icon component
-  const IconComponent = LucideIcons[service.icon as keyof typeof LucideIcons] || LucideIcons.FileText
+  // Dynamically get the icon component with proper typing
+  const IconComponent = (LucideIcons[service.icon as keyof typeof LucideIcons] || LucideIcons.FileText) as React.ComponentType<{ className?: string }>
 
   // Handle mouse move for 3D effect
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
@@ -119,7 +119,6 @@ export function ServiceCard({ service }: ServiceCardProps) {
                 <path d="M32 0L64 16L32 32L0 16L32 0Z" fill="white" />
               </svg>
             </motion.div>
-
             <IconComponent
               className={cn(
                 "h-8 w-8 transition-all duration-500 relative z-10",
@@ -153,7 +152,7 @@ export function ServiceCard({ service }: ServiceCardProps) {
         <CardFooter className="p-10 pt-0">
           <Button
             variant="ghost"
-            className={cn("p-0 h-auto group transition-all duration-300", isHovered ? "text-primary" : "")}
+            className={cn("h-auto hover:bg-muted/5 hover:text-primary group transition-all duration-300", isHovered ? "text-primary" : "")}
             asChild
           >
             <Link href={`/services#${service.id}`} className="flex items-center">
