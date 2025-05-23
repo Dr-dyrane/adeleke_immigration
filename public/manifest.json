@@ -2,7 +2,7 @@
   "name": "Adeleke Immigration Services",
   "short_name": "Adeleke Immigration",
   "description": "Professional immigration advisory and documentation support by Peter E. Adeleke, a retired U.S. Immigration Services Officer with 27 years of experience.",
-  "start_url": "/",
+  "start_url": "/?v=2",
   "display": "standalone",
   "background_color": "#000000",
   "theme_color": "#000000",

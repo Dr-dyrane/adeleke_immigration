@@ -21,7 +21,8 @@ export function TestimonialsSection() {
       role: "Family-Based Immigration",
       content:
         "Peter's expertise was invaluable in helping me navigate the complex process of bringing my parents to the U.S. His attention to detail and personalized guidance made all the difference.",
-      image: "/placeholder.svg?height=100&width=100",
+      // Friendly, mature Latina woman
+      image: "https://images.pexels.com/photos/762080/pexels-photo-762080.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop&crop=faces&dpr=1",
     },
     {
       id: 2,
@@ -29,7 +30,8 @@ export function TestimonialsSection() {
       role: "Naturalization",
       content:
         "After struggling with my citizenship application for months, I found Adeleke Immigration Services. Peter's knowledge and support made the process smooth and stress-free. I'm now a proud U.S. citizen!",
-      image: "/placeholder.svg?height=100&width=100",
+      // Professional, happy East Asian man
+      image: "https://images.pexels.com/photos/3769021/pexels-photo-3769021.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop&crop=faces&dpr=1",
     },
     {
       id: 3,
@@ -37,9 +39,29 @@ export function TestimonialsSection() {
       role: "Work Authorization",
       content:
         "As an international professional, I needed expert guidance for my work visa. Peter provided clear, strategic advice that helped me secure my position without delays or complications.",
-      image: "/placeholder.svg?height=100&width=100",
+      // Professional, confident South Asian woman
+      image: "https://images.pexels.com/photos/3775087/pexels-photo-3775087.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop&crop=faces&dpr=1",
     },
-  ]
+    {
+      id: 4,
+      name: "David Miller",
+      role: "Adjustment of Status",
+      content:
+        "The team at Adeleke Immigration Services was incredibly supportive during my adjustment of status. Their deep understanding of the requirements ensured everything was filed correctly the first time.",
+      // Professional, approachable Caucasian man
+      image: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop&crop=faces&dpr=1",
+    },
+    {
+      id: 5,
+      name: "Aisha Bello",
+      role: "Student Visa Support",
+      content:
+        "Navigating the student visa process felt overwhelming until I contacted Mr. Adeleke. He explained everything clearly and helped me prepare a strong application. I'm thrilled to start my studies!",
+      // Young, optimistic Black woman
+      image: "https://images.pexels.com/photos/5390338/pexels-photo-5390338.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop&crop=faces&dpr=1",
+    }
+  ];
+
 
   useEffect(() => {
     const observer = new IntersectionObserver(
