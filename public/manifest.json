@@ -5,16 +5,16 @@
   "start_url": "/",
   "display": "standalone",
   "background_color": "#000000",
-  "theme_color": "#0B3D91",
+  "theme_color": "#000000",
   "icons": [
     {
-      "src": "/icons/app-icon-gold-simple.svg",
+      "src": "/icons/placeholder.svg",
       "sizes": "any",
       "type": "image/svg+xml",
       "purpose": "any"
     },
     {
-      "src": "/icons/app-icon-gold-simple-light.svg",
+      "src": "/icons/placeholder.svg",
       "sizes": "any",
       "type": "image/svg+xml",
       "purpose": "any"
@@ -28,7 +28,7 @@
       "url": "/contact?action=consultation",
       "icons": [
         {
-          "src": "/icons/app-icon-gold-simple.svg",
+          "src": "/icons/placeholder.svg",
           "sizes": "any",
           "type": "image/svg+xml"
         }
@@ -41,7 +41,7 @@
       "url": "/services",
       "icons": [
         {
-          "src": "/icons/app-icon-gold-simple.svg",
+          "src": "/icons/placeholder.svg",
           "sizes": "any",
           "type": "image/svg+xml"
         }
