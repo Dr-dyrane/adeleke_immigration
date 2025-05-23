@@ -12,14 +12,6 @@ const inter = Inter({
   variable: "--font-inter",
   display: "swap",
   // Enable advanced font features for more elegant typography
-  features: {
-    calt: 1, // Contextual alternates
-    liga: 1, // Standard ligatures
-    kern: 1, // Kerning
-    ss01: 1, // Stylistic set 1 - alternate glyphs
-    ss02: 1, // Stylistic set 2
-    ss03: 1, // Stylistic set 3
-  },
 })
 
 export const metadata: Metadata = {

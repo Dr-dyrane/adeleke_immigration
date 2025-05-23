@@ -55,29 +55,31 @@ export function HeroSection() {
       {/* Eagle Shield Decorative Elements */}
       <motion.div
         className="absolute top-1/4 left-1/4 w-64 h-64 rounded-full bg-primary/20 blur-3xl opacity-60"
-        style={{
-          x: useTransform(() => mousePosition.x * -50),
-          y: useTransform(() => mousePosition.y * -50),
+        animate={{
+          x: mousePosition.x * -50,
+          y: mousePosition.y * -50,
           scale: isHovering ? 1.2 : 1,
-          transition: { duration: 0.5 },
         }}
+        transition={{ duration: 0.5 }}
       />
       <motion.div
         className="absolute bottom-1/3 right-1/4 w-80 h-80 rounded-full bg-primary/15 blur-3xl opacity-40"
-        style={{
-          x: useTransform(() => mousePosition.x * -30),
-          y: useTransform(() => mousePosition.y * -30),
+        animate={{
+          x: mousePosition.x * -30,
+          y: mousePosition.y * -30,
           scale: isHovering ? 1.2 : 1,
-          transition: { duration: 0.5, delay: 0.1 },
         }}
+        transition={{ duration: 0.5, delay: 0.1 }}
       />
 
       {/* Eagle Shield Emblem */}
       <motion.div
         className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-5 pointer-events-none"
+        animate={{
+          x: mousePosition.x * -10,
+          y: mousePosition.y * -10,
+        }}
         style={{
-          x: useTransform(() => mousePosition.x * -10),
-          y: useTransform(() => mousePosition.y * -10),
           scale: 3,
         }}
       >
