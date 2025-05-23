@@ -180,7 +180,7 @@ export function Header() {
                       <Link
                         href={item.href}
                         className={cn(
-                          "px-4 py-4 rounded-2xl text-lg font-medium transition-all duration-300 block flex items-center gap-3",
+                          "px-4 py-4 rounded-2xl text-lg font-medium transition-all duration-300 flex items-center gap-3",
                           pathname === item.href
                             ? "bg-primary/10 text-primary"
                             : "text-muted-foreground hover:bg-accent/50",
