@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Circle -->
+  <circle cx="256" cy="256" r="256" fill="#000000"/>
+  
+  <!-- Gold Circular Background -->
+  <circle cx="256" cy="256" r="220" fill="#F4C430" fill-opacity="0.05"/>
+  <circle cx="256" cy="256" r="200" fill="#F4C430" fill-opacity="0.1"/>
+  <circle cx="256" cy="256" r="180" fill="#F4C430" fill-opacity="0.15"/>
+  
+  <!-- Outer Gold Ring -->
+  <circle cx="256" cy="256" r="230" fill="none" stroke="#F4C430" stroke-width="6"/>
+  
+  <!-- Stylized A for Adeleke - More Elegant -->
+  <path 
+    d="M256 100L346 340H166L256 100Z" 
+    fill="none"
+    stroke="#F4C430"
+    stroke-width="12"
+    stroke-linejoin="round"
+  />
+  
+  <!-- Horizontal Bar in A -->
+  <rect x="196" y="250" width="120" height="12" fill="#F4C430"/>
+  
+  <!-- Gold Accents at Corners of A -->
+  <circle cx="256" cy="100" r="10" fill="#F4C430"/>
+  <circle cx="166" cy="340" r="10" fill="#F4C430"/>
+  <circle cx="346" cy="340" r="10" fill="#F4C430"/>
+  
+  <!-- Gold Stars Around A -->
+  <g fill="#F4C430">
+    <!-- Top Star -->
+    <path d="M256 70L260 78H269L262 84L266 92L256 86L246 92L250 84L243 78H252L256 70Z"/>
+    
+    <!-- Left Star -->
+    <path d="M146 256L150 264H159L152 270L156 278L146 272L136 278L140 270L133 264H142L146 256Z"/>
+    
+    <!-- Right Star -->
+    <path d="M366 256L370 264H379L372 270L376 278L366 272L356 278L360 270L353 264H362L366 256Z"/>
+    
+    <!-- Bottom Star -->
+    <path d="M256 380L260 388H269L262 394L266 402L256 396L246 402L250 394L243 388H252L256 380Z"/>
+  </g>
+  
+  <!-- Gold Gradient Overlay -->
+  <defs>
+    <linearGradient id="goldGradient" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#F8D35E" stop-opacity="0.2"/>
+      <stop offset="50%" stop-color="#F4C430" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#E0B01C" stop-opacity="0.2"/>
+    </linearGradient>
+  </defs>
+  
+  <circle cx="256" cy="256" r="190" fill="url(#goldGradient)"/>
+  
+  <!-- Text Circle -->
+  <circle cx="256" cy="256" r="170" fill="none" stroke="#F4C430" stroke-width="2" stroke-dasharray="4 4"/>
+  
+  <!-- Immigration Services Text -->
+  <g>
+    <path id="textCircle" d="M256,380 a124,124 0 1,1 0.1,0" fill="none"/>
+    <text fill="#F4C430" font-family="Arial, sans-serif" font-size="18" font-weight="bold" letter-spacing="2">
+      <textPath href="#textCircle" startOffset="50%" text-anchor="middle">
+        ADELEKE IMMIGRATION SERVICES
+      </textPath>
+    </text>
+  </g>
+  
+  <!-- Small Decorative Elements -->
+  <rect x="246" y="400" width="20" height="4" fill="#F4C430"/>
+  <rect x="246" y="410" width="20" height="4" fill="#F4C430"/>
+  <rect x="246" y="420" width="20" height="4" fill="#F4C430"/>
+</svg>

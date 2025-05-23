@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Circle -->
+  <circle cx="256" cy="256" r="256" fill="#000000"/>
+  
+  <!-- Gold Circular Background -->
+  <circle cx="256" cy="256" r="220" fill="#F4C430" fill-opacity="0.05"/>
+  <circle cx="256" cy="256" r="200" fill="#F4C430" fill-opacity="0.1"/>
+  
+  <!-- Outer Gold Ring -->
+  <circle cx="256" cy="256" r="230" fill="none" stroke="#F4C430" stroke-width="8"/>
+  
+  <!-- Stylized A for Adeleke - Bold and Clear -->
+  <path 
+    d="M256 96L356 356H156L256 96Z" 
+    fill="none"
+    stroke="#F4C430"
+    stroke-width="16"
+    stroke-linejoin="round"
+  />
+  
+  <!-- Horizontal Bar in A -->
+  <rect x="186" y="246" width="140" height="16" fill="#F4C430"/>
+  
+  <!-- Gold Accents at Corners of A -->
+  <circle cx="256" cy="96" r="12" fill="#F4C430"/>
+  <circle cx="156" cy="356" r="12" fill="#F4C430"/>
+  <circle cx="356" cy="356" r="12" fill="#F4C430"/>
+  
+  <!-- Five Stars Representing Immigration Services -->
+  <g fill="#F4C430">
+    <!-- Top Star -->
+    <path d="M256 40L264 56H282L268 66L276 82L256 72L236 82L244 66L230 56H248L256 40Z"/>
+    
+    <!-- Left Star -->
+    <path d="M136 256L144 272H162L148 282L156 298L136 288L116 298L124 282L110 272H128L136 256Z"/>
+    
+    <!-- Right Star -->
+    <path d="M376 256L384 272H402L388 282L396 298L376 288L356 298L364 282L350 272H368L376 256Z"/>
+    
+    <!-- Bottom Left Star -->
+    <path d="M196 396L204 412H222L208 422L216 438L196 428L176 438L184 422L170 412H188L196 396Z"/>
+    
+    <!-- Bottom Right Star -->
+    <path d="M316 396L324 412H342L328 422L336 438L316 428L296 438L304 422L290 412H308L316 396Z"/>
+  </g>
+  
+  <!-- Gold Gradient Overlay -->
+  <defs>
+    <radialGradient id="goldGlow" cx="0.5" cy="0.5" r="0.5" fx="0.5" fy="0.5">
+      <stop offset="0%" stop-color="#F8D35E" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#E0B01C" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  
+  <circle cx="256" cy="256" r="180" fill="url(#goldGlow)"/>
+</svg>
