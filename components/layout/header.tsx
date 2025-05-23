@@ -70,84 +70,72 @@ export function Header() {
         animate={{ y: 0 }}
         transition={{ type: "spring", stiffness: 200, damping: 25, duration: 0.5 }}
       >
-        <div className=" mx-auto px-4">
-          <div className="flex items-center justify-between h-16"> {/* Added fixed height for consistency */}
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              transition={{ duration: 0.3 }}
-              className="flex-shrink-0" // Prevent logo from shrinking too much
-            >
-              {/* Conditionally render logo variant based on screen size if truly needed,
-                    otherwise, a single responsive SVG logo is better.
-                    For simplicity, let's assume 'default' variant is responsive.
-                */}
-              <Logo variant={!isLgScreen && !isScrolled ? "mobile" : "default"} />
-            </motion.div>
+        <div className="mx-auto px-4">
+          <div className="flex items-center h-16">
+            {/* Section 1: Logo (Left) */}
+            <div className="flex-shrink-0">
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.3 }}
+              >
+                <Logo variant={!isLgScreen && !isScrolled ? "mobile" : "default"} />
+              </motion.div>
+            </div>
 
-            {/* Desktop Navigation */}
-            <nav className="hidden lg:flex items-center space-x-2 ml-auto mr-4"> {/* Added ml-auto to push nav right before actions */}
-              {navigation.map((item) => (
-                <motion.div
-                  key={item.name}
-                  onHoverStart={() => setHoveredItem(item.name)}
-                  onHoverEnd={() => setHoveredItem(null)}
-                >
-                  <Link
-                    href={item.href}
-                    className={cn(
-                      "px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200 relative group flex items-center gap-1.5",
-                      // Increased gap slightly
-                      pathname === item.href
-                        ? "text-primary"
-                        : "text-muted-foreground hover:text-foreground"
-                    )}
+            {/* Section 2: Navigation Items (Center) - Desktop Only */}
+            <div className="hidden lg:flex flex-1 justify-center">
+              <nav className="flex items-center space-x-1">
+                {navigation.map((item) => (
+                  <motion.div
+                    key={item.name}
+                    onHoverStart={() => setHoveredItem(item.name)}
+                    onHoverEnd={() => setHoveredItem(null)}
                   >
-                    <item.icon className="h-4 w-4 flex-shrink-0" />
-                    <span className="relative z-10">{item.name}</span>
+                    <Link
+                      href={item.href}
+                      className={cn(
+                        "px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200 relative group flex items-center gap-1.5",
+                        pathname === item.href
+                          ? "text-primary"
+                          : "text-muted-foreground hover:text-foreground"
+                      )}
+                    >
+                      <item.icon className="h-4 w-4 flex-shrink-0" />
+                      <span className="relative z-10">{item.name}</span>
 
-                    {/* Background highlight on hover/active */}
-                    <motion.span
-                      className="absolute inset-0 rounded-md -z-10 bg-primary/10"
-                      initial={{ scaleY: 0, opacity: 0 }}
-                      animate={{
-                        scaleY: hoveredItem === item.name || pathname === item.href ? 1 : 0,
-                        opacity: hoveredItem === item.name || pathname === item.href ? 1 : 0,
-                      }}
-                      transition={{ duration: 0.2, ease: "easeOut" }}
-                      style={{ originY: 0.5 }}
-                    />
-
-                    {/* Active item indicator */}
-                    {pathname === item.href && (
-                      <motion.div
-                        className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary"
-                        layoutId="activeNavIndicatorDesktop"
-                        transition={{ type: "spring", stiffness: 350, damping: 30 }}
+                      {/* Background highlight on hover/active */}
+                      <motion.span
+                        className="absolute inset-0 rounded-md -z-10 bg-primary/10"
+                        initial={{ scaleY: 0, opacity: 0 }}
+                        animate={{
+                          scaleY: hoveredItem === item.name || pathname === item.href ? 1 : 0,
+                          opacity: hoveredItem === item.name || pathname === item.href ? 1 : 0,
+                        }}
+                        transition={{ duration: 0.2, ease: "easeOut" }}
+                        style={{ originY: 0.5 }}
                       />
-                    )}
-                  </Link>
-                </motion.div>
-              ))}
-            </nav>
+                    </Link>
+                  </motion.div>
+                ))}
+              </nav>
+            </div>
 
-            {/* Desktop Action Buttons & Theme Toggle */}
-            <div className="hidden lg:flex items-center space-x-3">
+            {/* Section 3: CTA & Theme Toggle (Right) - Desktop Only */}
+            <div className="hidden lg:flex items-center space-x-3 flex-shrink-0">
               <ThemeToggle />
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                 <Button
-                  asChild // Use asChild if the button itself is a Link or wraps one
+                  asChild
                   size="sm"
                   className="rounded-full px-5 hover-glow transition-all duration-300 group"
                 >
-                  {/* <Link href="/schedule-consultation"> Optional if button is a link */}
                   <span className="relative z-10">Schedule Consultation</span>
-                  {/* </Link> */}
                 </Button>
               </motion.div>
             </div>
 
             {/* Mobile/Tablet Menu Trigger */}
-            <div className="flex lg:hidden items-center space-x-2">
+            <div className="flex lg:hidden items-center space-x-2 ml-auto">
               <ThemeToggle />
               <Sheet>
                 <SheetTrigger asChild>
