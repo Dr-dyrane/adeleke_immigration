@@ -4,6 +4,8 @@ import { Inter } from "next/font/google"
 import { ThemeProvider } from "@/components/theme-provider"
 import { Header } from "@/components/layout/header"
 import { Footer } from "@/components/layout/footer"
+import ErrorBoundary from "@/components/error-boundary"
+import { ChunkErrorHandler } from "@/components/chunk-error-handler"
 import "./globals.css"
 import { HEADER_MAX_HEIGHT_PX } from "@/components/layout/header"
 
@@ -40,15 +42,18 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head />
       <body className={`${inter.variable} font-sans antialiased overflow-x-hidden`}>
-        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange={false}>
-          <div className="flex min-h-screen flex-col overflow-x-hidden">
-            <Header />
-            <main className="flex-grow overflow-x-hidden"
-              style={{ paddingTop: `${HEADER_MAX_HEIGHT_PX}px` }}
-            >{children}</main>
-            <Footer />
-          </div>
-        </ThemeProvider>
+        <ErrorBoundary>
+          <ChunkErrorHandler />
+          <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange={false}>
+            <div className="flex min-h-screen flex-col overflow-x-hidden">
+              <Header />
+              <main className="flex-grow overflow-x-hidden"
+                style={{ paddingTop: `${HEADER_MAX_HEIGHT_PX}px` }}
+              >{children}</main>
+              <Footer />
+            </div>
+          </ThemeProvider>
+        </ErrorBoundary>
       </body>
     </html>
   )

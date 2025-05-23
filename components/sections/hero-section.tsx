@@ -296,7 +296,7 @@ export function HeroSection() {
               </motion.div>
              { <motion.p
                 className="text-2xl sm:text-3xl md:text-5xl font-bold"
-                initial={{ color: "gray" }}
+                initial={{ color: "slate" }}
                 whileHover={{
                   color: "rgba(59, 130, 246, 1)",
                   transition: { duration: 0.3 },
