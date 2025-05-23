@@ -35,10 +35,6 @@ export const metadata: Metadata = {
       type: "image/svg+xml",
     },
   ],
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
-    { media: "(prefers-color-scheme: dark)", color: "#111827" },
-  ],
   appleWebApp: {
     capable: true,
     statusBarStyle: "default",
@@ -47,7 +43,6 @@ export const metadata: Metadata = {
   formatDetection: {
     telephone: false,
   },
-  viewport: "width=device-width, initial-scale=1",
   generator: 'v0.dev'
 }
 

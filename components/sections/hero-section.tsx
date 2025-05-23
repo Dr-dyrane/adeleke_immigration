@@ -52,7 +52,7 @@ export function HeroSection() {
         <motion.div style={{ ...parallaxStyle }} className="w-full h-full">
           {mounted && (
             <Image
-              src={currentTheme === 'dark' ? '/hero/hero-dark.png?height=1080&width=1920' : '/hero/hero.png?height=1080&width=1920'}
+              src={currentTheme === 'dark' ? '/hero/hero_dark.png?height=1080&width=1920' : '/hero/hero.png?height=1080&width=1920'}
               alt="Immigration Services"
               fill
               className="object-cover"

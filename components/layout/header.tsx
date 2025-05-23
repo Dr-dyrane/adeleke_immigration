@@ -129,7 +129,9 @@ export function Header() {
                   size="sm"
                   className="rounded-full px-5 hover-glow transition-all duration-300 group"
                 >
-                  <span className="relative z-10">Schedule Consultation</span>
+                  <Link href="/contact">
+                    <span className="relative z-10">Schedule Consultation</span>
+                  </Link>
                 </Button>
               </motion.div>
             </div>
