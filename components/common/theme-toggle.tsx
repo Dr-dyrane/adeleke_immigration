@@ -58,7 +58,11 @@ export function ThemeToggle() {
           transition={{ duration: 0.2 }}
           className="absolute inset-0 flex items-center justify-center"
         >
-          {theme === "dark" ? <Moon className="h-5 w-5 text-primary" /> : <Sun className="h-5 w-5 text-primary" />}
+          {theme === "dark" ? (
+            <Sun className="h-5 w-5 text-primary" /> // Switch to light
+          ) : (
+            <Moon className="h-5 w-5 text-primary" /> // Switch to dark
+          )}
         </motion.div>
       </AnimatePresence>
       <span className="sr-only">Toggle theme</span>

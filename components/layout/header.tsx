@@ -152,7 +152,7 @@ export function Header() {
               <Sheet>
                 <SheetTrigger asChild>
                   <motion.button
-                    className="p-2 rounded-full hover:bg-muted/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                    className="p-2 rounded-full hover:bg-muted/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
                     aria-label="Open menu"
                     whileTap={{ scale: 0.9 }}
                   >
