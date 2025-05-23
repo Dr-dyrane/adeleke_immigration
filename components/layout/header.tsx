@@ -147,7 +147,7 @@ export function Header() {
                     <Menu className="h-6 w-6" />
                   </motion.button>
                 </SheetTrigger>
-                <SheetContent side="right" className="w-[340px] flex flex-col p-0 bg-background/95 dark:bg-background/25 backdrop-blur-sm rounded-l-3xl">
+                <SheetContent side="right" className="w-[340px] flex flex-col p-0 bg-background/95 dark:bg-background/55 border-none shadow-sm backdrop-blur-sm rounded-l-3xl">
                   <SheetHeader className="p-6 pb-0">
                     <SheetTitle className="text-left">
                         <Logo variant="mobile" />
