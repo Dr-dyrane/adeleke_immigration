@@ -70,7 +70,7 @@ export function Header() {
         animate={{ y: 0 }}
         transition={{ type: "spring", stiffness: 200, damping: 25, duration: 0.5 }}
       >
-        <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"> {/* Adjusted max-width and padding */}
+        <div className=" mx-auto px-4">
           <div className="flex items-center justify-between h-16"> {/* Added fixed height for consistency */}
             <motion.div
               whileHover={{ scale: 1.05 }}

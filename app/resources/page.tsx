@@ -100,7 +100,7 @@ export default function ResourcesPage() {
         </div>
       </PageHero>
 
-      <div className="container max-w-6xl mx-auto px-4 py-32 min-h-screen">
+      <div className="container mx-auto px-4 py-32 min-h-screen">
         <motion.div
           className="flex flex-wrap gap-6 mb-16 justify-center"
           initial={{ opacity: 0, y: 20 }}

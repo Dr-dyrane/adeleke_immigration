@@ -84,7 +84,7 @@ export function ServicesSection() {
       ref={sectionRef}
       className="py-32 min-h-screen flex items-center bg-gradient-to-b from-background via-background/95 to-background/90"
     >
-      <div className="container max-w-6xl mx-auto px-4">
+      <div className="container mx-auto px-4">
         <motion.div
           className="text-center mb-20"
           initial={{ opacity: 0, y: 20 }}

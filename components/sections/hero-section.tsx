@@ -127,7 +127,7 @@ export function HeroSection() {
       {/* Hero Content */}
       <motion.div
         ref={heroRef}
-        className="container max-w-6xl mx-auto px-4 pt-24 relative z-10 overflow-hidden"
+        className=" mx-auto px-4 pt-24 relative z-10 overflow-hidden"
         style={{ opacity, y: translateY }}
       >
         <div className="max-w-3xl mx-auto text-center space-y-10">

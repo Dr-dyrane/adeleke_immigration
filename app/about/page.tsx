@@ -35,7 +35,7 @@ export default function AboutPage() {
         height="large"
       />
 
-      <div className="container max-w-6xl mx-auto px-4 py-32 min-h-screen flex items-center">
+      <div className=" mx-auto px-4 py-32 min-h-screen flex items-center">
         <div className="grid md:grid-cols-2 gap-16 items-center">
           <motion.div
             className="relative aspect-square md:aspect-auto md:h-[600px] rounded-3xl overflow-hidden shadow-2xl shadow-primary/10"
@@ -86,7 +86,7 @@ export default function AboutPage() {
         </div>
       </div>
 
-      <div className="container max-w-6xl mx-auto px-4 py-32 min-h-screen flex items-center">
+      <div className=" max-w-6xl mx-auto px-4 py-32 min-h-screen flex items-center">
         <div className="w-full">
           <motion.h2
             className="text-4xl md:text-5xl font-bold text-center mb-16 bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/70"

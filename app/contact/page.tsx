@@ -39,7 +39,7 @@ export default function ContactPage() {
         height="large"
       />
 
-      <div className="container max-w-6xl mx-auto px-4 py-32 min-h-screen">
+      <div className=" mx-auto px-4 py-32 min-h-screen">
         <div className="grid md:grid-cols-2 gap-16">
           <motion.div
             initial={{ opacity: 0, x: -30 }}

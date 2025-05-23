@@ -91,7 +91,7 @@ export default function ServicesPage() {
         </Button>
       </PageHero>
 
-      <div id="services" className="container max-w-6xl mx-auto px-4 py-32 min-h-screen flex items-center">
+      <div id="services" className="container mx-auto px-4 py-32 min-h-screen flex items-center">
         <div className="w-full">
           <motion.h2
             className="text-4xl md:text-5xl font-bold mb-16 text-center"

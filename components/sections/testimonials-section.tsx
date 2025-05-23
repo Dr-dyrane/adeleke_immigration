@@ -95,7 +95,7 @@ export function TestimonialsSection() {
       ref={sectionRef}
       className="py-32 min-h-screen flex items-center bg-gradient-to-b from-background/90 via-background to-background/90"
     >
-      <div className="container max-w-6xl mx-auto px-4">
+      <div className=" mx-auto px-4">
         <motion.div
           className="text-center mb-20"
           initial={{ opacity: 0, y: 20 }}

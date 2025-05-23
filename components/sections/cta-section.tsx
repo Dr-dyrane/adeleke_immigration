@@ -83,7 +83,7 @@ export function CTASection() {
         }}
       />
 
-      <div className="container max-w-6xl mx-auto px-4 relative z-10">
+      <div className=" mx-auto px-4 relative z-10">
         <motion.div
           className="max-w-3xl mx-auto text-center space-y-10"
           initial={{ opacity: 0, y: 30 }}

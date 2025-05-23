@@ -113,7 +113,7 @@ export function PageHero({
       />
 
       {/* Hero Content */}
-      <div className={cn("container max-w-6xl mx-auto px-4 relative z-10 flex flex-col", getAlignmentClass())}>
+      <div className={cn(" mx-auto px-4 relative z-10 flex flex-col", getAlignmentClass())}>
         <motion.h1
           className="text-5xl md:text-7xl font-bold tracking-tight"
           initial={{ opacity: 0, y: 20 }}

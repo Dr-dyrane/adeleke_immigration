@@ -45,7 +45,7 @@ export function AboutPreviewSection() {
       ref={sectionRef}
       className="py-32 min-h-screen flex items-center bg-gradient-to-b from-background/90 via-background to-background/90"
     >
-      <div className="container max-w-6xl mx-auto px-4">
+      <div className=" mx-auto px-4">
         <div className="grid md:grid-cols-2 gap-16 items-center">
           <motion.div
             className="relative aspect-square md:aspect-auto md:h-[600px] rounded-3xl overflow-hidden shadow-2xl shadow-primary/10"
