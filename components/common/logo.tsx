@@ -107,7 +107,7 @@ export function Logo({ className, variant = "default" }: LogoProps) {
       </div>
 
       <motion.span
-        className="absolute -bottom-1 left-0 h-0.5 bg-primary"
+        className="absolute -bottom-1 left-0 h-0.5 bg-accent"
         initial={{ width: 0 }}
         whileHover={{ width: "100%" }}
         transition={{ duration: 0.3 }}
