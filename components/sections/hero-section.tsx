@@ -6,6 +6,7 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, ChevronDown, Shield, FileText } from "lucide-react"
 import { motion, useScroll, useTransform } from "framer-motion"
+import { useTheme } from "next-themes"
 
 export function HeroSection() {
   const heroRef = useRef<HTMLDivElement>(null)
@@ -14,6 +15,14 @@ export function HeroSection() {
   const { scrollY } = useScroll()
   const opacity = useTransform(scrollY, [0, 400], [1, 0])
   const translateY = useTransform(scrollY, [0, 400], [0, 100])
+
+  const { theme, setTheme } = useTheme()
+  const [mounted, setMounted] = useState(false)
+  const currentTheme = theme || 'dark'
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -28,7 +37,7 @@ export function HeroSection() {
   }, [])
 
   const parallaxStyle = {
-    transform: `translate(${mousePosition.x * -20}px, ${mousePosition.y * -20}px)`,
+    transform: `translate(${mousePosition.x * -10}px, ${mousePosition.y * -10}px)`,
     transition: "transform 0.2s cubic-bezier(0.16, 1, 0.3, 1)",
   }
 
@@ -41,13 +50,15 @@ export function HeroSection() {
       {/* Background with Parallax Effect */}
       <div className="absolute inset-0 z-0">
         <motion.div style={{ ...parallaxStyle }} className="w-full h-full">
-          <Image
-            src="/placeholder.svg?height=1080&width=1920"
-            alt="Immigration Services"
-            fill
-            className="object-cover"
-            priority
-          />
+          {mounted && (
+            <Image
+              src={currentTheme === 'dark' ? '/hero/hero-dark.png?height=1080&width=1920' : '/hero/hero.png?height=1080&width=1920'}
+              alt="Immigration Services"
+              fill
+              className="object-cover"
+              priority
+            />
+          )}
         </motion.div>
         <div className="absolute inset-0 bg-gradient-to-b from-background/95 via-background/80 to-background" />
       </div>
@@ -74,13 +85,15 @@ export function HeroSection() {
 
       {/* Eagle Shield Emblem */}
       <motion.div
-        className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-5 pointer-events-none"
+        className="absolute top-1/2 left-1/2 opacity-5 pointer-events-none"
         animate={{
           x: mousePosition.x * -5,
           y: mousePosition.y * -5,
         }}
         style={{
           scale: 2,
+          transform: 'translate(-50%, -50%) scale(2)',
+          transformOrigin: 'center center',
           maxWidth: '100vw',
           overflow: 'hidden'
         }}
@@ -241,7 +254,7 @@ export function HeroSection() {
 
         {/* Stats with eagle shield styling */}
         <motion.div
-          className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-8 mt-20 sm:mt-32 glass rounded-3xl p-6 sm:p-10 relative overflow-hidden"
+          className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-8 mt-20 sm:mt-32 mb-20 sm:mb-10 glass rounded-3xl p-6 sm:p-10 relative overflow-hidden"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.7, ease: [0.16, 1, 0.3, 1] }}
@@ -281,17 +294,17 @@ export function HeroSection() {
                   <path d="M50 0L100 25L50 50L0 25L50 0Z" fill="currentColor" className="text-primary/10" />
                 </svg>
               </motion.div>
-              <motion.p
-                className="text-3xl md:text-5xl font-bold"
-                initial={{ color: "#888" }}
+             { <motion.p
+                className="text-2xl sm:text-3xl md:text-5xl font-bold"
+                initial={{ color: "gray" }}
                 whileHover={{
                   color: "rgba(59, 130, 246, 1)",
                   transition: { duration: 0.3 },
                 }}
               >
                 {stat.value}
-              </motion.p>
-              <p className="text-sm md:text-base text-muted-foreground mt-3">{stat.label}</p>
+              </motion.p>}
+              <p className="text-xs sm:text-sm md:text-base text-muted-foreground mt-2 sm:mt-3">{stat.label}</p>
             </motion.div>
           ))}
         </motion.div>
@@ -299,7 +312,7 @@ export function HeroSection() {
 
       {/* Scroll Indicator with eagle shield styling */}
       <motion.div
-        className="absolute bottom-5 sm:bottom-10 left-1/2 transform -translate-x-1/2 cursor-pointer"
+        className="absolute bottom-16 sm:bottom-10 left-1/2 transform -translate-x-1/2 cursor-pointer"
         initial={{ opacity: 0 }}
         animate={{ opacity: 0.8 }}
         transition={{ delay: 1.5, duration: 1 }}
@@ -312,32 +325,33 @@ export function HeroSection() {
         }}
       >
         <motion.div
-          className="w-10 h-16 rounded-full border-2 border-primary/30 flex items-start justify-center p-2 relative"
-          animate={{ y: [0, 10, 0] }}
+          className="w-8 h-12 sm:w-10 sm:h-16 rounded-full border-2 border-primary/30 flex items-start justify-center p-1 sm:p-2 relative"
+          animate={{ y: [0, 8, 0] }}
           transition={{ repeat: Number.POSITIVE_INFINITY, duration: 2 }}
         >
           <motion.div
-            className="w-1.5 h-3 bg-primary rounded-full"
+            className="w-1 h-2 sm:w-1.5 sm:h-3 bg-primary rounded-full"
             animate={{ opacity: [0.5, 1, 0.5] }}
             transition={{ repeat: Number.POSITIVE_INFINITY, duration: 2 }}
           />
           <motion.div
-            className="absolute -top-5 left-1/2 transform -translate-x-1/2"
+            className="absolute -top-3 sm:-top-5 left-1/2 transform -translate-x-1/2"
             animate={{ opacity: [0.3, 0.7, 0.3] }}
             transition={{ repeat: Number.POSITIVE_INFINITY, duration: 3 }}
           >
-            <svg width="20" height="10" viewBox="0 0 20 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg width="16" height="8" viewBox="0 0 20 10" fill="none" xmlns="http://www.w3.org/2000/svg" className="sm:w-5 sm:h-2.5">
               <path d="M10 0L20 5L10 10L0 5L10 0Z" fill="currentColor" className="text-primary" />
             </svg>
           </motion.div>
         </motion.div>
         <motion.div
-          className="text-primary/70 text-sm mt-2 text-center"
+          className="text-primary/70 text-xs sm:text-sm mt-1 sm:mt-2 text-center"
           initial={{ opacity: 0 }}
           whileHover={{ opacity: 1 }}
         >
-          <ChevronDown className="mx-auto h-4 w-4" />
-          Scroll to explore
+          <ChevronDown className="mx-auto h-3 w-3 sm:h-4 sm:w-4" />
+          <span className="hidden sm:inline">Scroll to explore</span>
+          <span className="sm:hidden">Scroll</span>
         </motion.div>
       </motion.div>
     </div>
