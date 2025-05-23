@@ -18,8 +18,12 @@ export function PWAInstall() {
   const [deferredPrompt, setDeferredPrompt] = useState<BeforeInstallPromptEvent | null>(null)
   const [showInstallPrompt, setShowInstallPrompt] = useState(false)
   const [isInstalled, setIsInstalled] = useState(false)
+  const [isBrowser, setIsBrowser] = useState(false)
 
   useEffect(() => {
+    // Set browser state
+    setIsBrowser(true)
+
     // Check if app is already installed
     if (window.matchMedia('(display-mode: standalone)').matches) {
       setIsInstalled(true)
@@ -67,12 +71,14 @@ export function PWAInstall() {
 
   const handleDismiss = () => {
     setShowInstallPrompt(false)
-    // Hide for this session
-    sessionStorage.setItem('pwa-install-dismissed', 'true')
+    // Hide for this session (only in browser)
+    if (isBrowser) {
+      sessionStorage.setItem('pwa-install-dismissed', 'true')
+    }
   }
 
   // Don't show if already installed or dismissed this session
-  if (isInstalled || sessionStorage.getItem('pwa-install-dismissed')) {
+  if (isInstalled || (isBrowser && sessionStorage.getItem('pwa-install-dismissed'))) {
     return null
   }
 

@@ -98,30 +98,13 @@ export function HeroSection() {
           overflow: 'hidden'
         }}
       >
-        <svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path
-            d="M100 20C55.8172 20 20 55.8172 20 100C20 144.183 55.8172 180 100 180C144.183 180 180 144.183 180 100C180 55.8172 144.183 20 100 20Z"
-            fill="currentColor"
-            className="text-primary"
-          />
-          <path
-            d="M160 80C160 80 140 60 100 60C60 60 40 80 40 80C40 80 60 50 100 50C140 50 160 80 160 80Z"
-            fill="white"
-          />
-          <path d="M100 70C83.4315 70 70 83.4315 70 100V140H130V100C130 83.4315 116.569 70 100 70Z" fill="white" />
-          <path
-            d="M100 60C94.4772 60 90 64.4772 90 70C90 75.5228 94.4772 80 100 80C105.523 80 110 75.5228 110 70C110 64.4772 105.523 60 100 60Z"
-            fill="white"
-          />
-          <path
-            d="M100 90C96.134 90 93 93.134 93 97V120H107V97C107 93.134 103.866 90 100 90Z"
-            fill="currentColor"
-            className="text-primary"
-          />
-          <circle cx="85" cy="100" r="3" fill="currentColor" className="text-primary" />
-          <circle cx="115" cy="100" r="3" fill="currentColor" className="text-primary" />
-          <circle cx="100" cy="100" r="3" fill="currentColor" className="text-primary" />
-        </svg>
+        <Image
+          src="/icons/icon-512.svg"
+          alt="Adeleke Immigration"
+          width={200}
+          height={200}
+          priority
+        />
       </motion.div>
 
       {/* Hero Content */}
@@ -137,47 +120,13 @@ export function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           >
-            <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <motion.path
-                d="M40 10C23.4315 10 10 23.4315 10 40C10 56.5685 23.4315 70 40 70C56.5685 70 70 56.5685 70 40C70 23.4315 56.5685 10 40 10Z"
-                fill="currentColor"
-                className="text-primary/10"
-                animate={{ scale: [1, 1.05, 1] }}
-                transition={{ duration: 3, repeat: Number.POSITIVE_INFINITY, repeatType: "reverse" }}
-              />
-              <motion.path
-                d="M65 35C65 35 55 25 40 25C25 25 15 35 15 35C15 35 25 20 40 20C55 20 65 35 65 35Z"
-                fill="currentColor"
-                className="text-primary"
-                animate={{
-                  d: [
-                    "M65 35C65 35 55 25 40 25C25 25 15 35 15 35C15 35 25 20 40 20C55 20 65 35 65 35Z",
-                    "M70 32C70 32 55 22 40 22C25 22 10 32 10 32C10 32 25 17 40 17C55 17 70 32 70 32Z",
-                    "M65 35C65 35 55 25 40 25C25 25 15 35 15 35C15 35 25 20 40 20C55 20 65 35 65 35Z",
-                  ],
-                }}
-                transition={{ duration: 5, repeat: Number.POSITIVE_INFINITY, repeatType: "reverse" }}
-              />
-              <path
-                d="M40 30C33.3726 30 28 35.3726 28 42V55H52V42C52 35.3726 46.6274 30 40 30Z"
-                fill="currentColor"
-                className="text-primary"
-              />
-              <path
-                d="M40 25C37.7909 25 36 26.7909 36 29C36 31.2091 37.7909 33 40 33C42.2091 33 44 31.2091 44 29C44 26.7909 42.2091 25 40 25Z"
-                fill="currentColor"
-                className="text-primary"
-              />
-              <path d="M40 37C38.3431 37 37 38.3431 37 40V48H43V40C43 38.3431 41.6569 37 40 37Z" fill="white" />
-              <motion.g
-                animate={{ opacity: [0.5, 1, 0.5] }}
-                transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY, repeatType: "reverse" }}
-              >
-                <circle cx="35" cy="42" r="1.5" fill="white" />
-                <circle cx="45" cy="42" r="1.5" fill="white" />
-                <circle cx="40" cy="42" r="1.5" fill="white" />
-              </motion.g>
-            </svg>
+            <Image
+              src="/icons/icon-512.svg"
+              alt="Adeleke Immigration"
+              width={100}
+              height={100}
+              priority
+            />
           </motion.div>
 
           <motion.h1
@@ -294,7 +243,7 @@ export function HeroSection() {
                   <path d="M50 0L100 25L50 50L0 25L50 0Z" fill="currentColor" className="text-primary/10" />
                 </svg>
               </motion.div>
-             { <motion.p
+              {<motion.p
                 className="text-2xl sm:text-3xl md:text-5xl font-bold"
                 initial={{ color: "slate" }}
                 whileHover={{
