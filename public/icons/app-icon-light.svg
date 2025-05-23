@@ -3,51 +3,55 @@
   <!-- Background Circle -->
   <circle cx="256" cy="256" r="256" fill="#FFFFFF"/>
   
-  <!-- Eagle Shield Background -->
+  <!-- Gold Circular Background -->
+  <circle cx="256" cy="256" r="220" fill="#F4C430" fill-opacity="0.03"/>
+  <circle cx="256" cy="256" r="200" fill="#F4C430" fill-opacity="0.05"/>
+  
+  <!-- Outer Gold Ring -->
+  <circle cx="256" cy="256" r="230" fill="none" stroke="#E0B01C" stroke-width="8"/>
+  
+  <!-- Stylized A for Adeleke - Bold and Clear -->
   <path 
-    d="M256 64C138.3 64 43 159.3 43 277C43 394.7 138.3 490 256 490C373.7 490 469 394.7 469 277C469 159.3 373.7 64 256 64Z" 
-    fill="#FFFFFF"
+    d="M256 96L356 356H156L256 96Z" 
+    fill="none"
+    stroke="#E0B01C"
+    stroke-width="16"
+    stroke-linejoin="round"
   />
   
-  <!-- Eagle Wings -->
-  <path 
-    d="M405 224C405 224 362 181 256 181C150 181 107 224 107 224C107 224 150 160 256 160C362 160 405 224 405 224Z" 
-    fill="#0B3D91"
-  />
+  <!-- Horizontal Bar in A -->
+  <rect x="186" y="246" width="140" height="16" fill="#E0B01C"/>
   
-  <!-- Eagle Body -->
-  <path 
-    d="M256 203C220.7 203 192 231.7 192 267V352H320V267C320 231.7 291.3 203 256 203Z" 
-    fill="#0B3D91"
-  />
+  <!-- Gold Accents at Corners of A -->
+  <circle cx="256" cy="96" r="12" fill="#E0B01C"/>
+  <circle cx="156" cy="356" r="12" fill="#E0B01C"/>
+  <circle cx="356" cy="356" r="12" fill="#E0B01C"/>
   
-  <!-- Eagle Head -->
-  <path 
-    d="M256 181C244.4 181 235 190.4 235 202C235 213.6 244.4 223 256 223C267.6 223 277 213.6 277 202C277 190.4 267.6 181 256 181Z" 
-    fill="#0B3D91"
-  />
+  <!-- Five Stars Representing Immigration Services -->
+  <g fill="#E0B01C">
+    <!-- Top Star -->
+    <path d="M256 40L264 56H282L268 66L276 82L256 72L236 82L244 66L230 56H248L256 40Z"/>
+    
+    <!-- Left Star -->
+    <path d="M136 256L144 272H162L148 282L156 298L136 288L116 298L124 282L110 272H128L136 256Z"/>
+    
+    <!-- Right Star -->
+    <path d="M376 256L384 272H402L388 282L396 298L376 288L356 298L364 282L350 272H368L376 256Z"/>
+    
+    <!-- Bottom Left Star -->
+    <path d="M196 396L204 412H222L208 422L216 438L196 428L176 438L184 422L170 412H188L196 396Z"/>
+    
+    <!-- Bottom Right Star -->
+    <path d="M316 396L324 412H342L328 422L336 438L316 428L296 438L304 422L290 412H308L316 396Z"/>
+  </g>
   
-  <!-- Shield on Eagle's Chest -->
-  <path 
-    d="M256 245C247.2 245 240 252.2 240 261V309H272V261C272 252.2 264.8 245 256 245Z" 
-    fill="#B22234"
-  />
+  <!-- Gold Gradient Overlay -->
+  <defs>
+    <radialGradient id="goldGlow" cx="0.5" cy="0.5" r="0.5" fx="0.5" fy="0.5">
+      <stop offset="0%" stop-color="#F8D35E" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#E0B01C" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
   
-  <!-- Stars -->
-  <circle cx="213" cy="267" r="10" fill="#0B3D91" />
-  <circle cx="299" cy="267" r="10" fill="#B22234" />
-  <circle cx="256" cy="267" r="10" fill="#0B3D91" />
-  
-  <!-- Red Stripes -->
-  <rect x="128" y="384" width="256" height="16" fill="#B22234" />
-  <rect x="128" y="416" width="256" height="16" fill="#B22234" />
-  <rect x="128" y="448" width="256" height="16" fill="#B22234" />
-  
-  <!-- Gold Accent -->
-  <path 
-    d="M256 480C361.9 480 448 393.9 448 288C448 182.1 361.9 96 256 96C150.1 96 64 182.1 64 288C64 393.9 150.1 480 256 480Z" 
-    fill="none" 
-    stroke="#F4C430" 
-    stroke-width="4"
-  />
+  <circle cx="256" cy="256" r="180" fill="url(#goldGlow)"/>
 </svg>
