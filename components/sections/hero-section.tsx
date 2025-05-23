@@ -247,7 +247,7 @@ export function HeroSection() {
                 className="text-2xl sm:text-3xl md:text-5xl font-bold"
                 initial={{ color: "slate" }}
                 whileHover={{
-                  color: "rgba(59, 130, 246, 1)",
+                  color: "rgba(184, 134, 11, 1)",
                   transition: { duration: 0.3 },
                 }}
               >

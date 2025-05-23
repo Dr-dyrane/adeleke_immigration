@@ -10,14 +10,14 @@
     --card-foreground: 222.2 84% 4.9%;
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
-    --primary: 221.2 83.2% 53.3%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 43 65% 45%;
+    --primary-foreground: 0 0% 100%;
     --secondary: 210 40% 96.1%;
     --secondary-foreground: 222.2 47.4% 11.2%;
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
-    --accent: 43 42% 56%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 221.2 83.2% 53.3%;
+    --accent-foreground: 210 40% 98%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
     --border: 214.3 31.8% 91.4%;
@@ -39,14 +39,14 @@
     --card-foreground: 210 40% 98%;
     --popover: 0 0% 0%;
     --popover-foreground: 210 40% 98%;
-    --primary: 217.2 91.2% 59.8%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 43 42% 56%;
+    --primary-foreground: 0 0% 0%;
     --secondary: 217.2 32.6% 17.5%;
     --secondary-foreground: 210 40% 98%;
     --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215 20.2% 65.1%;
-    --accent: 43 42% 56%;
-    --accent-foreground: 0 0% 0%;
+    --accent: 217.2 91.2% 59.8%;
+    --accent-foreground: 222.2 47.4% 11.2%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
     --border: 217.2 32.6% 17.5%;
@@ -166,13 +166,13 @@
 
 @keyframes pulse {
   0% {
-    box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.4);
+    box-shadow: 0 0 0 0 rgba(184, 134, 11, 0.4);
   }
   70% {
-    box-shadow: 0 0 0 15px rgba(59, 130, 246, 0);
+    box-shadow: 0 0 0 15px rgba(184, 134, 11, 0);
   }
   100% {
-    box-shadow: 0 0 0 0 rgba(59, 130, 246, 0);
+    box-shadow: 0 0 0 0 rgba(184, 134, 11, 0);
   }
 }
 
@@ -270,7 +270,7 @@
 }
 
 .hover-glow:hover {
-  box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+  box-shadow: 0 0 20px rgba(184, 134, 11, 0.5);
 }
 
 /* Eagle Shield Glow */
@@ -309,16 +309,16 @@
 
 /* Eagle Shield Glass */
 .eagle-glass {
-  background: rgba(59, 130, 246, 0.05);
+  background: rgba(184, 134, 11, 0.05);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(59, 130, 246, 0.1);
-  box-shadow: 0 8px 32px 0 rgba(59, 130, 246, 0.1);
+  border: 1px solid rgba(184, 134, 11, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(184, 134, 11, 0.1);
 }
 
 .dark .eagle-glass {
-  background: rgba(59, 130, 246, 0.1);
-  border: 1px solid rgba(59, 130, 246, 0.2);
+  background: rgba(184, 134, 11, 0.1);
+  border: 1px solid rgba(184, 134, 11, 0.2);
 }
 
 /* Fluid shapes */
@@ -370,11 +370,11 @@
 
 /* Eagle Shield Shadow */
 .eagle-shadow {
-  box-shadow: 0 10px 30px -5px rgba(59, 130, 246, 0.2);
+  box-shadow: 0 10px 30px -5px rgba(184, 134, 11, 0.2);
 }
 
 .dark .eagle-shadow {
-  box-shadow: 0 10px 30px -5px rgba(59, 130, 246, 0.3);
+  box-shadow: 0 10px 30px -5px rgba(184, 134, 11, 0.3);
 }
 
 /* Page transitions */
@@ -410,10 +410,10 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(59, 130, 246, 0.3);
+  background: rgba(184, 134, 11, 0.3);
   border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(59, 130, 246, 0.5);
+  background: rgba(184, 134, 11, 0.5);
 }

@@ -32,15 +32,19 @@ Welcome to the official repository for the Adeleke Immigration Services Progress
     *   [Logo Inspiration](#logo-inspiration)
     *   [Color Palette](#color-palette)
     *   [Typography](#typography)
-8.  [PWA Configuration](#8-pwa-configuration)
-9.  [Supabase Integration](#9-supabase-integration)
+8.  [Color Scheme Implementation](#8-color-scheme-implementation)
+    *   [CSS Custom Properties](#css-custom-properties)
+    *   [Gradient Text Effects](#gradient-text-effects)
+    *   [Usage Guidelines](#usage-guidelines)
+9.  [PWA Configuration](#9-pwa-configuration)
+10. [Supabase Integration](#10-supabase-integration)
     *   [Database Tables](#database-tables)
-10. [API Endpoints](#10-api-endpoints)
-11. [Form Handling & Validation](#11-form-handling--validation)
-12. [Deployment](#12-deployment)
-13. [Future Enhancements](#13-future-enhancements)
-14. [Contributing](#14-contributing)
-15. [License](#15-license)
+11. [API Endpoints](#11-api-endpoints)
+12. [Form Handling & Validation](#12-form-handling--validation)
+13. [Deployment](#13-deployment)
+14. [Future Enhancements](#14-future-enhancements)
+15. [Contributing](#15-contributing)
+16. [License](#16-license)
 
 ---
 
@@ -217,16 +221,34 @@ Inspired by U.S. government immigration websites (DHS/USCIS) but with a modern, 
 Based on the DHS eagle emblem, simplified and adapted for civil use, designed to instill trust and professionalism.
 
 ### Color Palette
-The application uses a carefully selected color palette configured in Tailwind CSS:
+The application uses a carefully selected color palette configured in Tailwind CSS with **Gold as Primary** and **Blue as Accent**:
 
-*   **Primary:** Federal Blue (#0B3D91)
-*   **Accent:** Gold (#F4C430)
+#### **Primary Colors (Gold)**
+*   **Light Mode Primary:** Dark Goldenrod (#B8860B) - `HSL(43, 65%, 45%)`
+*   **Dark Mode Primary:** Golden Bronze (#C09A5D) - `HSL(43, 42%, 56%)`
+*   **Usage:** Main CTAs, active navigation states, form focus indicators, service card hovers
+
+#### **Accent Colors (Blue)**
+*   **Light Mode Accent:** Federal Blue (#3B82F6) - `HSL(221, 83%, 53%)`
+*   **Dark Mode Accent:** Bright Blue (#60A5FA) - `HSL(217, 91%, 60%)`
+*   **Usage:** Secondary interactive elements, informational states, complementary design
+
+#### **Background & Foreground**
 *   **Background (Dark):** #0E1117
 *   **Foreground (Dark):** #F5F7FA
-*   **Eagle-inspired colors:**
-    *   Eagle Blue: #3B82F6
-    *   Eagle Gold: #F59E0B
-    *   Eagle Red: #EF4444
+*   **Background (Light):** #FFFFFF
+*   **Foreground (Light):** #0F172A
+
+#### **Eagle-inspired Colors (Legacy)**
+*   **Eagle Blue:** #3B82F6 (now used as accent)
+*   **Eagle Gold:** #F59E0B (enhanced to primary gold)
+*   **Eagle Red:** #EF4444 (destructive actions)
+
+#### **Design Philosophy**
+- **Gold Primary:** Conveys trust, authority, and premium service quality
+- **Blue Accent:** Provides professional contrast and complements patriotic themes
+- **Accessibility:** All color combinations meet WCAG contrast requirements
+- **Consistency:** Uses CSS custom properties for theme-wide color management
 
 ### Typography
 *   **Font Family:** Inter (Google Font)
@@ -236,7 +258,48 @@ The application uses a carefully selected color palette configured in Tailwind C
 
 ---
 
-## 8. PWA Configuration
+## 8. Color Scheme Implementation
+
+### CSS Custom Properties
+The color scheme is implemented using CSS custom properties in `app/globals.css`:
+
+```css
+:root {
+  /* Light Mode */
+  --primary: 43 65% 45%;          /* Dark Goldenrod */
+  --primary-foreground: 0 0% 100%; /* White */
+  --accent: 221 83% 53%;           /* Federal Blue */
+  --accent-foreground: 210 40% 98%; /* Light Blue */
+}
+
+.dark {
+  /* Dark Mode */
+  --primary: 43 42% 56%;           /* Golden Bronze */
+  --primary-foreground: 0 0% 0%;   /* Black */
+  --accent: 217 91% 60%;           /* Bright Blue */
+  --accent-foreground: 222 47% 11%; /* Dark Blue */
+}
+```
+
+### Gradient Text Effects
+Special gradient text effects are used for branding elements:
+
+```tsx
+// Logo and CTA headings use animated gradients
+backgroundImage: "linear-gradient(to right, hsl(var(--primary)), hsl(var(--primary) / 0.8), hsl(var(--primary)))"
+backgroundClip: "text"
+color: "transparent"
+```
+
+### Usage Guidelines
+- **Primary Gold:** Use for main CTAs, active states, and primary interactions
+- **Accent Blue:** Use for secondary actions, informational elements, and complementary design
+- **Consistent Implementation:** Always use CSS custom properties instead of hardcoded hex values
+- **Accessibility:** All color combinations maintain WCAG AA contrast ratios
+
+---
+
+## 9. PWA Configuration
 
 The application is configured as a Progressive Web App (PWA), allowing users to install it on their devices and access content offline.
 
@@ -247,7 +310,7 @@ The application is configured as a Progressive Web App (PWA), allowing users to 
 
 ---
 
-## 9. Supabase Integration
+## 10. Supabase Integration
 
 The application uses Supabase as its backend service for data storage and retrieval.
 
@@ -262,7 +325,7 @@ The application uses Supabase as its backend service for data storage and retrie
 
 ---
 
-## 10. API Endpoints
+## 11. API Endpoints
 
 *   **GET /api/services:** Retrieve all services
 *   **GET /api/resources:** Retrieve all published resources
@@ -272,7 +335,7 @@ The application uses Supabase as its backend service for data storage and retrie
 
 ---
 
-## 11. Form Handling & Validation
+## 12. Form Handling & Validation
 
 Forms are built using React Hook Form with Zod schema validation:
 
@@ -283,7 +346,7 @@ Form submissions are processed through API routes and stored in Supabase.
 
 ---
 
-## 12. Deployment
+## 13. Deployment
 
 The application is designed to be deployed on Vercel or similar platforms:
 
@@ -293,7 +356,7 @@ The application is designed to be deployed on Vercel or similar platforms:
 
 ---
 
-## 13. Future Enhancements
+## 14. Future Enhancements
 
 *   **Client Portal:** Secure login area for clients to track their cases
 *   **Document Upload:** Secure document sharing functionality
@@ -304,7 +367,7 @@ The application is designed to be deployed on Vercel or similar platforms:
 
 ---
 
-## 14. Contributing
+## 15. Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
 
@@ -316,6 +379,6 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ---
 
-## 15. License
+## 16. License
 
 This project is licensed under the MIT License - see the LICENSE file for details.

@@ -49,7 +49,7 @@ export function CTASection() {
       <motion.div
         className="absolute inset-0"
         animate={{
-          background: `radial-gradient(circle at ${mousePosition.x * 100}% ${mousePosition.y * 100}%, rgba(59, 130, 246, 0.3), rgba(59, 130, 246, 0.1) 50%, transparent)`,
+          background: `radial-gradient(circle at ${mousePosition.x * 100}% ${mousePosition.y * 100}%, rgba(184, 134, 11, 0.3), rgba(184, 134, 11, 0.1) 50%, transparent)`,
           opacity: isHovered ? 1 : 0.5,
         }}
         transition={{ duration: 0.3 }}
@@ -105,7 +105,7 @@ export function CTASection() {
             initial={{ backgroundPosition: "0% 0%" }}
             animate={{
               backgroundPosition: isInView ? "100% 0%" : "0% 0%",
-              backgroundImage: "linear-gradient(to right, #3b82f6, #93c5fd, #3b82f6)",
+              backgroundImage: "linear-gradient(to right, hsl(var(--primary)), hsl(var(--primary) / 0.8), hsl(var(--primary)))",
               backgroundSize: "200% auto",
               backgroundClip: "text",
               WebkitBackgroundClip: "text",

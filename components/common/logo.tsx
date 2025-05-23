@@ -42,7 +42,7 @@ export function Logo({ className, variant = "default" }: LogoProps) {
               isMobile ? "text-xl" : isFooter ? "text-2xl" : "text-2xl",
             )}
             animate={{
-              backgroundImage: "linear-gradient(to right, #3b82f6, #93c5fd, #3b82f6)",
+              backgroundImage: "linear-gradient(to right, hsl(var(--primary)), hsl(var(--primary) / 0.8), hsl(var(--primary)))",
               backgroundSize: "200% auto",
               backgroundClip: "text",
               WebkitBackgroundClip: "text",
