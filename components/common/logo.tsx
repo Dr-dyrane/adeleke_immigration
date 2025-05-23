@@ -18,9 +18,9 @@ export function Logo({ className, variant = "default" }: LogoProps) {
       <div className="flex items-center gap-2">
         <motion.div className="relative" whileHover={{ scale: 1.05 }} transition={{ duration: 0.3 }}>
           <svg
-            width={isMobile ? "32" : isFooter ? "40" : "48"}
-            height={isMobile ? "32" : isFooter ? "40" : "48"}
-            viewBox="0 0 48 48"
+            width={isMobile ? "48" : isFooter ? "52" : "60"}
+            height={isMobile ? "48" : isFooter ? "52" : "60"}
+            viewBox="0 0 52 52"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
             className="text-primary"

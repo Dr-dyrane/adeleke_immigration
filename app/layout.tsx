@@ -4,8 +4,8 @@ import { Inter } from "next/font/google"
 import { ThemeProvider } from "@/components/theme-provider"
 import { Header } from "@/components/layout/header"
 import { Footer } from "@/components/layout/footer"
-import { Breadcrumbs } from "@/components/layout/breadcrumbs"
 import "./globals.css"
+import { HEADER_MAX_HEIGHT_PX } from "@/components/layout/header"
 
 const inter = Inter({
   subsets: ["latin"],
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     title: "Adeleke Immigration",
     statusBarStyle: "default",
   },
-    generator: 'v0.dev'
+  generator: 'v0.dev'
 }
 
 export default function RootLayout({
@@ -43,8 +43,9 @@ export default function RootLayout({
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange={false}>
           <div className="flex min-h-screen flex-col">
             <Header />
-            <Breadcrumbs />
-            <main className="flex-1">{children}</main>
+            <main className="flex-grow"
+              style={{ paddingTop: `${HEADER_MAX_HEIGHT_PX}px` }}
+            >{children}</main>
             <Footer />
           </div>
         </ThemeProvider>
