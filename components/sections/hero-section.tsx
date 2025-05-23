@@ -34,7 +34,7 @@ export function HeroSection() {
 
   return (
     <div
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden max-w-[100vw]"
       onMouseEnter={() => setIsHovering(true)}
       onMouseLeave={() => setIsHovering(false)}
     >
@@ -54,19 +54,19 @@ export function HeroSection() {
 
       {/* Eagle Shield Decorative Elements */}
       <motion.div
-        className="absolute top-1/4 left-1/4 w-64 h-64 rounded-full bg-primary/20 blur-3xl opacity-60"
+        className="absolute top-1/4 left-1/4 w-32 sm:w-48 md:w-64 h-32 sm:h-48 md:h-64 rounded-full bg-primary/20 blur-3xl opacity-60"
         animate={{
-          x: mousePosition.x * -50,
-          y: mousePosition.y * -50,
+          x: mousePosition.x * -25,
+          y: mousePosition.y * -25,
           scale: isHovering ? 1.2 : 1,
         }}
         transition={{ duration: 0.5 }}
       />
       <motion.div
-        className="absolute bottom-1/3 right-1/4 w-80 h-80 rounded-full bg-primary/15 blur-3xl opacity-40"
+        className="absolute bottom-1/3 right-1/4 w-40 sm:w-60 md:w-80 h-40 sm:h-60 md:h-80 rounded-full bg-primary/15 blur-3xl opacity-40"
         animate={{
-          x: mousePosition.x * -30,
-          y: mousePosition.y * -30,
+          x: mousePosition.x * -15,
+          y: mousePosition.y * -15,
           scale: isHovering ? 1.2 : 1,
         }}
         transition={{ duration: 0.5, delay: 0.1 }}
@@ -76,11 +76,13 @@ export function HeroSection() {
       <motion.div
         className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-5 pointer-events-none"
         animate={{
-          x: mousePosition.x * -10,
-          y: mousePosition.y * -10,
+          x: mousePosition.x * -5,
+          y: mousePosition.y * -5,
         }}
         style={{
-          scale: 3,
+          scale: 2,
+          maxWidth: '100vw',
+          overflow: 'hidden'
         }}
       >
         <svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -112,7 +114,7 @@ export function HeroSection() {
       {/* Hero Content */}
       <motion.div
         ref={heroRef}
-        className="container max-w-6xl mx-auto px-4 pt-24 relative z-10"
+        className="container max-w-6xl mx-auto px-4 pt-24 relative z-10 overflow-hidden"
         style={{ opacity, y: translateY }}
       >
         <div className="max-w-3xl mx-auto text-center space-y-10">
@@ -239,7 +241,7 @@ export function HeroSection() {
 
         {/* Stats with eagle shield styling */}
         <motion.div
-          className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-32 glass rounded-3xl p-10 relative overflow-hidden"
+          className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-8 mt-20 sm:mt-32 glass rounded-3xl p-6 sm:p-10 relative overflow-hidden"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.7, ease: [0.16, 1, 0.3, 1] }}
@@ -297,7 +299,7 @@ export function HeroSection() {
 
       {/* Scroll Indicator with eagle shield styling */}
       <motion.div
-        className="absolute bottom-10 left-1/2 transform -translate-x-1/2 cursor-pointer"
+        className="absolute bottom-5 sm:bottom-10 left-1/2 transform -translate-x-1/2 cursor-pointer"
         initial={{ opacity: 0 }}
         animate={{ opacity: 0.8 }}
         transition={{ delay: 1.5, duration: 1 }}
