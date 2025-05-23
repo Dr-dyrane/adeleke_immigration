@@ -9,6 +9,33 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
+  // PWA Configuration
+  async headers() {
+    return [
+      {
+        source: '/manifest.json',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=0, must-revalidate',
+          },
+        ],
+      },
+      {
+        source: '/sw.js',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=0, must-revalidate',
+          },
+          {
+            key: 'Service-Worker-Allowed',
+            value: '/',
+          },
+        ],
+      },
+    ]
+  },
   // Help prevent chunk load errors
   webpack: (config, { dev, isServer }) => {
     if (dev && !isServer) {

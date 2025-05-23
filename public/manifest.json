@@ -8,16 +8,16 @@
   "theme_color": "#000000",
   "icons": [
     {
-      "src": "/icons/placeholder.svg",
-      "sizes": "any",
+      "src": "/icons/icon-192.svg",
+      "sizes": "192x192",
       "type": "image/svg+xml",
-      "purpose": "any"
+      "purpose": "any maskable"
     },
     {
-      "src": "/icons/placeholder.svg",
-      "sizes": "any",
+      "src": "/icons/icon-512.svg",
+      "sizes": "512x512",
       "type": "image/svg+xml",
-      "purpose": "any"
+      "purpose": "any maskable"
     }
   ],
   "shortcuts": [
@@ -28,8 +28,8 @@
       "url": "/contact?action=consultation",
       "icons": [
         {
-          "src": "/icons/placeholder.svg",
-          "sizes": "any",
+          "src": "/icons/icon-192.svg",
+          "sizes": "192x192",
           "type": "image/svg+xml"
         }
       ]
@@ -41,8 +41,8 @@
       "url": "/services",
       "icons": [
         {
-          "src": "/icons/placeholder.svg",
-          "sizes": "any",
+          "src": "/icons/icon-192.svg",
+          "sizes": "192x192",
           "type": "image/svg+xml"
         }
       ]

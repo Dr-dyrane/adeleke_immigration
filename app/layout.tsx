@@ -6,6 +6,8 @@ import { Header } from "@/components/layout/header"
 import { Footer } from "@/components/layout/footer"
 import ErrorBoundary from "@/components/error-boundary"
 import { ChunkErrorHandler } from "@/components/chunk-error-handler"
+import { PWARegister } from "@/components/pwa-register"
+import { PWAInstall } from "@/components/pwa-install"
 import "./globals.css"
 import { HEADER_MAX_HEIGHT_PX } from "@/components/layout/header"
 
@@ -21,15 +23,31 @@ export const metadata: Metadata = {
   description:
     "Professional immigration advisory and documentation support by Peter E. Adeleke, a retired U.S. Immigration Services Officer with 27 years of experience.",
   manifest: "/manifest.json",
+  icons: [
+    {
+      url: "/icons/icon-192.svg",
+      sizes: "192x192",
+      type: "image/svg+xml",
+    },
+    {
+      url: "/icons/icon-512.svg",
+      sizes: "512x512",
+      type: "image/svg+xml",
+    },
+  ],
   themeColor: [
     { media: "(prefers-color-scheme: light)", color: "#ffffff" },
     { media: "(prefers-color-scheme: dark)", color: "#111827" },
   ],
-  viewport: "width=device-width, initial-scale=1",
   appleWebApp: {
-    title: "Adeleke Immigration",
+    capable: true,
     statusBarStyle: "default",
+    title: "Adeleke Immigration",
   },
+  formatDetection: {
+    telephone: false,
+  },
+  viewport: "width=device-width, initial-scale=1",
   generator: 'v0.dev'
 }
 
@@ -44,6 +62,7 @@ export default function RootLayout({
       <body className={`${inter.variable} font-sans antialiased overflow-x-hidden`}>
         <ErrorBoundary>
           <ChunkErrorHandler />
+          <PWARegister />
           <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange={false}>
             <div className="flex min-h-screen flex-col overflow-x-hidden">
               <Header />
@@ -52,6 +71,7 @@ export default function RootLayout({
               >{children}</main>
               <Footer />
             </div>
+            <PWAInstall />
           </ThemeProvider>
         </ErrorBoundary>
       </body>
