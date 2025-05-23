@@ -45,7 +45,7 @@ export function AboutPreviewSection() {
       ref={sectionRef}
       className="py-32 min-h-screen flex items-center bg-gradient-to-b from-background/90 via-background to-background/90"
     >
-      <div className=" mx-auto px-4">
+      <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-2 gap-16 items-center">
           <motion.div
             className="relative aspect-square md:aspect-auto md:h-[600px] rounded-3xl overflow-hidden shadow-2xl shadow-primary/10"
@@ -54,7 +54,7 @@ export function AboutPreviewSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           >
-            <Image src="/placeholder.svg?height=600&width=600" alt="Peter E. Adeleke" fill className="object-cover" />
+            <Image src="/hero/peter.png" alt="Peter E. Adeleke - Immigration Services Expert" fill className="object-cover object-center" />
             <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent"></div>
           </motion.div>
 
