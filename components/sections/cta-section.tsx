@@ -160,7 +160,7 @@ export function CTASection() {
               <Button
                 size="lg"
                 variant="outline"
-                className="gap-3 rounded-full px-10 py-8 backdrop-blur-sm bg-background/10 group text-lg"
+                className="gap-3 w-full rounded-full px-8 py-8 backdrop-blur-sm bg-background/10 group text-lg"
                 asChild
               >
                 <Link href="/contact">
@@ -173,11 +173,11 @@ export function CTASection() {
                   <MessageSquare className="h-6 w-6 transition-transform duration-300 group-hover:scale-110" />
                   <span className="relative z-10">Contact Us</span>
                   <motion.div
-                    className="absolute right-8 opacity-0 group-hover:opacity-100"
+                    className="hidden group-hover:inline-flex border border-primary rounded-full p-2"
                     animate={{ x: [0, 5, 0] }}
                     transition={{ repeat: Number.POSITIVE_INFINITY, duration: 1.5 }}
                   >
-                    <ArrowRight className="h-5 w-5" />
+                    <ArrowRight className="h-5 w-5 font-bold text-primary" fontWeight={"bold"} />
                   </motion.div>
                 </Link>
               </Button>

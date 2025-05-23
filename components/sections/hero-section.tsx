@@ -189,7 +189,13 @@ export function HeroSection() {
               <Link href="/services" className="flex items-center gap-3">
                 <FileText className="h-5 w-5" />
                 <span className="relative z-10">Our Services</span>
-                <ArrowRight className="ml-1 h-5 w-5 transition-transform duration-300 group-hover:translate-x-2" />
+                <motion.div
+                  className="hidden group-hover:inline-flex border border-primary rounded-full p-2"
+                  animate={{ x: [0, 5, 0] }}
+                  transition={{ repeat: Number.POSITIVE_INFINITY, duration: 1.5 }}
+                >
+                  <ArrowRight className="h-5 w-5 font-bold text-primary" fontWeight={"bold"} />
+                </motion.div>
                 <motion.span
                   className="absolute inset-0 bg-primary/10 rounded-full"
                   initial={{ scale: 0, opacity: 0 }}
