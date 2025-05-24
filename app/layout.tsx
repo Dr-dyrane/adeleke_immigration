@@ -4,10 +4,9 @@ import { Inter } from "next/font/google"
 import { ThemeProvider } from "@/components/theme-provider"
 import { Header } from "@/components/layout/header"
 import { Footer } from "@/components/layout/footer"
-import ErrorBoundary from "@/components/error-boundary"
-import { ChunkErrorHandler } from "@/components/chunk-error-handler"
-import { PWARegister } from "@/components/pwa-register"
-import { PWAInstall } from "@/components/pwa-install"
+import { ErrorBoundary, ChunkErrorHandler } from "@/components/error-handling"
+import { PWARegister, PWAInstall } from "@/components/pwa"
+import { DevCachePanel, ProdCacheManager } from "@/components/cache"
 import "./globals.css"
 import { HEADER_MAX_HEIGHT_PX } from "@/components/layout/header"
 
@@ -58,6 +57,7 @@ export default function RootLayout({
         <ErrorBoundary>
           <ChunkErrorHandler />
           <PWARegister />
+          {/* <CacheInitializer /> */}
           <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange={false}>
             <div className="flex min-h-screen flex-col overflow-x-hidden">
               <Header />
@@ -67,6 +67,8 @@ export default function RootLayout({
               <Footer />
             </div>
             <PWAInstall />
+            <DevCachePanel />
+            <ProdCacheManager />
           </ThemeProvider>
         </ErrorBoundary>
       </body>

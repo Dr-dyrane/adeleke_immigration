@@ -4,9 +4,12 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "dev:clean": "npm run clear-cache && next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "clear-cache": "node -e \"console.log('Cache clearing will be handled by the browser cache manager')\"",
+    "cache-info": "node -e \"console.log('Open browser dev tools and run: window.cacheUtils.logCacheInfo()')\""
   },
   "dependencies": {
     "@emotion/is-prop-valid": "latest",
