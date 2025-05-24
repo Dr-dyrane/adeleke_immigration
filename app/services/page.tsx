@@ -7,6 +7,8 @@ import { Button } from "@/components/ui/button"
 import { ArrowRight } from "lucide-react"
 import Link from "next/link"
 import { motion } from "framer-motion"
+import { useTheme } from "next-themes"
+import { useEffect, useState } from "react"
 
 export default function ServicesPage() {
   const services = [
@@ -75,12 +77,20 @@ export default function ServicesPage() {
     show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } },
   }
 
+  const { theme } = useTheme()
+  const [mounted, setMounted] = useState(false)
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+  const isDark = theme === "dark"
+  const imageUrl = mounted && isDark ? "/services/services_dark.png?height=1080&width=1920" : "/services/services.png?height=1080&width=1920"
+
   return (
     <div>
       <PageHero
         title="Our Services"
         subtitle="Professional immigration advisory and documentation support tailored to your unique needs"
-        backgroundImage="/placeholder.svg?height=1080&width=1920"
+        backgroundImage={imageUrl}
         height="large"
       >
         <Button size="lg" className="rounded-full px-10 py-8 hover-glow text-lg shadow-lg shadow-primary/20" asChild>

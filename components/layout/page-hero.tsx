@@ -86,7 +86,7 @@ export function PageHero({
             src={backgroundImage || "/placeholder.svg"}
             alt="Page Background"
             fill
-            className="object-cover"
+            className="object-cover opacity-15"
             priority
           />
         </div>
