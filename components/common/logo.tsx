@@ -18,7 +18,7 @@ export function Logo({ className, variant = "default" }: LogoProps) {
     <Link href="/" className={cn("relative group", className)}>
       <div className="flex items-center gap-2">
         <motion.div className="relative" whileHover={{ scale: 1.05 }} transition={{ duration: 0.3 }}>
-         <Image src="/icons/icon-512.svg" alt="Adeleke Immigration" width={isMobile ? 48 : isFooter ? 52 : 60} height={isMobile ? 48 : isFooter ? 52 : 60} />
+         <Image src="/icons/icon-512.png" alt="Adeleke Immigration" width={isMobile ? 48 : isFooter ? 52 : 60} height={isMobile ? 48 : isFooter ? 52 : 60} />
           {/* Animated glow effect */}
           <motion.div
             className="absolute inset-0 rounded-full bg-primary/20 blur-md -z-10"

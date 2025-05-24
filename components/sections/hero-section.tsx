@@ -99,7 +99,7 @@ export function HeroSection() {
         }}
       >
         <Image
-          src="/icons/icon-512.svg"
+          src="/icons/icon-512.png"
           alt="Adeleke Immigration"
           width={200}
           height={200}
@@ -121,7 +121,7 @@ export function HeroSection() {
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           >
             <Image
-              src="/icons/icon-512.svg"
+              src="/icons/icon-512.png"
               alt="Adeleke Immigration"
               width={100}
               height={100}
